@@ -1,0 +1,68 @@
+title = "distance extraction configuration"
+
+[distances]
+
+# how many frames apart "near" samples are
+lag = 1
+
+# number of samples per condition ("near" or "random")
+nsamples = 100000
+
+# distance function. valid values are "euclidean" and "cosine"
+distance = "euclidean"
+
+[features]
+
+  [features.preprocessing]
+
+  # if set to a nonzero value, run a highpass filter over the signal
+  highpass = 0
+
+  # remove dc offset
+  dc_removal = true
+
+  # samplerate
+  samplerate = 16000
+
+  # resample the audio to the above samplerate. use this only if you have no
+  # external way to resample the audio files.
+  resample = false
+
+  # preemphasis
+  preemph = 0.97
+
+  [features.spectral]
+
+  # number of bins in the FFT
+  nfft = 512
+
+  # number of frames per second
+  framerate = 100
+
+  # length of window in milliseconds
+  winlen = 0.01
+
+  # scale
+  scale = "mel"  # no other choice
+
+  # number of mel filterbanks
+  filterbanks = 40
+
+  # lower and upper frequencies of the filters
+  lowerf = 120
+  upperf = 6900
+
+  # include derivatives and double derivatives
+  deltas = true
+
+  # perform dct, i.e. go from mel spectrum to mel cepstrum representation
+  dct = true
+  nceps = 13
+
+  # normalize mean and/or standard deviation per feature
+  mean_normalize = true
+  std_normalize = true
+
+  # type of amplitude compression. use "log" for classical compression
+  # otherwise, use "cubicroot"
+  compression = "log"
