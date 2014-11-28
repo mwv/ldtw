@@ -8,7 +8,15 @@
   - [[https://pypi.python.org/pypi/toml/0.8.2][toml]]
   - [[http://www.github.com/mwv/spectral][spectral]]
   - [[https://pypi.python.org/pypi/scikits.audiolab][scikits.audiolab]]
+
+If you want the code to resample audio files for you, you will also need:
+
   - [[https://pypi.python.org/pypi/scikits.samplerate/0.3.3][scikits.samplerate]]
+
+For plotting:
+
+  - [[http://matplotlib.org][matplotlib]]
+  - [[http://stanford.edu/~mwaskom/software/seaborn/][seaborn]]
 
 ** Installation
 
@@ -17,16 +25,20 @@ It's probably a good idea to do all of this in a virtual environment:
 : $ virtualenv myvenv
 : $ source myvenv/bin/activate
 
-*** Install the dependencies
+Install the dependencies:
 
 : $ pip install numpy
 : $ pip install scipy
 : $ pip install toml
 : $ pip install scikits.audiolab
-: $ pip install scikits.samplerate
 : $ pip install git+git://github.com/mwv/spectral.git
 
-*** Clone this repo and install as developer:
+And optionally:
+: $ pip install scikits.samplerate
+: $ pip install matplotlib
+: $ pip install seaborn
+
+Clone this repo and install as developer:
 
 : $ git clone git@github.com:mwv/ldtw.git
 : $ cd ldtw
@@ -34,6 +46,6 @@ It's probably a good idea to do all of this in a virtual environment:
 
 ** Usage
 
-*** Inspect pairwise spectral frame distances
+Inspect pairwise spectral frame distances:
 
 : $ python bin/distances.py -h
